@@ -1,0 +1,46 @@
+$date
+	Thu Sep 11 14:59:41 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_arith_shift1x4_right $end
+$var wire 4 ! X [3:0] $end
+$var reg 4 " A [3:0] $end
+$scope module dut $end
+$var wire 4 # A [3:0] $end
+$var wire 4 $ X [3:0] $end
+$upscope $end
+$scope task show $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b11 $
+b110 #
+b110 "
+b11 !
+$end
+#5000
+b1101 !
+b1101 $
+b1011 "
+b1011 #
+#10000
+b1100 !
+b1100 $
+b1000 "
+b1000 #
+#15000
+b0 !
+b0 $
+b1 "
+b1 #
+#20000

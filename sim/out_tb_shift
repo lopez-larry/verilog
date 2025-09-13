@@ -1,0 +1,72 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2009.vpi";
+S_0x159705f00 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x159704410 .scope module, "tb_arith_shift1x4_right" "tb_arith_shift1x4_right" 3 2;
+ .timescale -9 -12;
+v0x600003338480_0 .var "A", 3 0;
+v0x600003338510_0 .net "X", 3 0, L_0x6000030381e0;  1 drivers
+S_0x159704580 .scope module, "dut" "arith_shift1x4_right" 3 4, 4 2 0, S_0x159704410;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /OUTPUT 4 "X";
+v0x600003338240_0 .net "A", 3 0, v0x600003338480_0;  1 drivers
+v0x6000033382d0_0 .net "X", 3 0, L_0x6000030381e0;  alias, 1 drivers
+v0x600003338360_0 .net *"_ivl_1", 0 0, L_0x6000030380a0;  1 drivers
+v0x6000033383f0_0 .net *"_ivl_3", 2 0, L_0x600003038140;  1 drivers
+L_0x6000030380a0 .part v0x600003338480_0, 3, 1;
+L_0x600003038140 .part v0x600003338480_0, 1, 3;
+L_0x6000030381e0 .concat [ 3 1 0 0], L_0x600003038140, L_0x6000030380a0;
+S_0x159704cd0 .scope task, "show" "show" 3 6, 3 6 0, S_0x159704410;
+ .timescale -9 -12;
+TD_tb_arith_shift1x4_right.show ;
+    %load/vec4 v0x600003338480_0;
+    %load/vec4 v0x600003338510_0;
+    %vpi_call/w 3 8 "$display", "t=%0t  A=%b (%0d)  X=%b (%0d)", $time, v0x600003338480_0, S<1,vec4,s4>, v0x600003338510_0, S<0,vec4,s4> {2 0 0};
+    %end;
+    .scope S_0x159704410;
+T_1 ;
+    %vpi_call/w 3 13 "$dumpfile", "tb_arith_shift1x4_right.vcd" {0 0 0};
+    %vpi_call/w 3 13 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x159704410 {0 0 0};
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x600003338480_0, 0, 4;
+    %delay 1000, 0;
+    %fork TD_tb_arith_shift1x4_right.show, S_0x159704cd0;
+    %join;
+    %delay 4000, 0;
+    %pushi/vec4 11, 0, 4;
+    %store/vec4 v0x600003338480_0, 0, 4;
+    %delay 1000, 0;
+    %fork TD_tb_arith_shift1x4_right.show, S_0x159704cd0;
+    %join;
+    %delay 4000, 0;
+    %pushi/vec4 8, 0, 4;
+    %store/vec4 v0x600003338480_0, 0, 4;
+    %delay 1000, 0;
+    %fork TD_tb_arith_shift1x4_right.show, S_0x159704cd0;
+    %join;
+    %delay 4000, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v0x600003338480_0, 0, 4;
+    %delay 1000, 0;
+    %fork TD_tb_arith_shift1x4_right.show, S_0x159704cd0;
+    %join;
+    %delay 4000, 0;
+    %vpi_call/w 3 18 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "sim/tb_arith_shift1x4_right.v";
+    "src/shifter/arith_shift1x4_right.v";
