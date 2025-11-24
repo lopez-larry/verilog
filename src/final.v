@@ -137,7 +137,7 @@ module alu4 (
 
 endmodule
 
-// Paste your existing module definitions below:
+// Existing module definitions below:
 // and4, nand4, or4, nor4, xor4, xnor4, not4,
 // shifter2x4, add4, sub4, mul4, div4
 module and4 (
