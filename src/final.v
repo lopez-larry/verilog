@@ -257,5 +257,3 @@ module div4 (
     assign quot = (b != 0) ? (a / b) : 4'b0000;
     assign rem  = (b != 0) ? (a % b) : a; // if divide by 0, return dividend
 endmodule
-
-//missing nor4
